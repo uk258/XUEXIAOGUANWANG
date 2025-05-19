@@ -1,0 +1,725 @@
+/* #region-通用-start */
+/* 版心 */
+.main::before{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    height: 10px;
+    width: 100%;
+    position: fixed;
+    content: "";
+    top: -10px;
+}
+.main {
+    font-size: 15px;
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+/* 按钮类 */
+.botton {
+    cursor: pointer;
+}
+/* 清除浮动 */
+.clearfix {
+    clear: both;
+}
+/* 左浮动 */
+.leftfix {
+    float: left;
+}
+/* 右浮动 */
+.rightfix {
+    float: right;
+}
+/* #endregion-通用-end */
+/* #region-头部-start */
+.header{
+    width: 100%;
+    background-color: #105fa5;
+}
+.header .container {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    height: 116px;
+    align-items: center;
+    background: url("   https://cs.hrbust.edu.cn/_upload/tpl/01/4e/334/template334/images/heabd.jpg");
+    background-position: -3px 3px;
+}
+.header .header-left {
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+.header .header-right {
+    height: 108px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+.header .header-right .searchbox {
+    width: 160px;
+    height: 28px;
+    margin: auto 0;
+    margin-right: 12px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding-top: 12px;
+}
+.header .header-right input {
+    border: 1px solid #d0d0d0;
+    background-color: transparent;
+    width: 152px;
+    height: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    line-height: 24px;
+}
+.header .header-right input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    line-height: 24px;
+    padding-left: 2px;
+}
+.header .searchbox>button {
+    background: transparent;
+    position: absolute;
+    cursor: pointer;
+    right: 5px;
+    top: 11px;
+    padding-right: 2px;
+}
+.header .header-right a{
+    line-height: 18px;
+    width: 48px;
+    height: 26px;
+    font-size: 12px;
+    color: white;
+    margin-top: 20px;
+    display: inline-block;
+    margin-bottom: 5px;
+
+}
+/* #endregion-头部-end */
+/* #region-导航栏-start */
+.nav {
+    width: 100%;
+    background-color: #105fa5;
+    border-bottom: 5px solid #d6bd88;
+}
+.nav .container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 45px;
+    align-items: center;
+    background: url("   https://cs.hrbust.edu.cn/_upload/tpl/01/4e/334/template334/images/navbd.jpg");
+    border-top: 1px solid rgb(57, 119, 174);
+    background-position: -3px -4px;
+}
+.nav .container .nav-item{
+    height: 45px;
+    width: 100px;
+    line-height: 42px;
+    color: #fffefe;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+.nav .container .list-head:hover{
+    background-color: #1384e2;
+    transition: all .4s ease-in-out;
+}
+.nav .container .list-head:hover > .item2-submenu{
+    display: block;
+}
+.nav .nav-item2 .item2-submenu{
+    height: 240px;
+    display: none;
+    overflow: hidden;
+}
+.nav .nav-item2 .submenu{
+    z-index: 9999;
+    position: absolute;
+}   
+.nav .nav-item2 .submenu>li{
+    width: 100px;
+    display: block;
+    padding: 0 17px;
+    height: 40px;
+    background: white;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    transition: all .4s ease-in-out;
+}
+.nav .nav-item2 .submenu>li:hover{
+    color: white;
+    background-color: #1384e2;
+    transition: all .4s ease-in-out;
+}
+/* #endregion-导航栏-end */
+/* #region-海报-start */
+.main-banner {
+    background-image: url("https://cs.hrbust.edu.cn/_upload/tpl/01/4e/334/template334/images/banbd.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    z-index: 1;
+}
+.main-banner .container {
+    height: 435px;
+    position: relative;
+    cursor: pointer;
+}
+.main-banner .container .main-banner-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s  ease-in-out;
+    /* cursor: pointer; */
+}
+.main-banner .container .main-banner-img-display {
+    opacity: 1;
+    /* cursor: pointer; */
+}
+.main-banner .main-banner-btn {
+    width: 1100px;
+    position: absolute;
+    left: 0;
+    top: 190px;
+    overflow: hidden;
+    opacity: 0;
+}
+.main-banner .main-banner-btn-show {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.main-banner .main-banner-btn-img {
+    z-index: 1;
+    background-color: black;
+    border-radius: 8px;
+    opacity: 0.6;
+}
+.main-banner .main-banner-btn-img:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.main-banner .main-banner-btn-imgR {
+    float: right;
+    padding: 3px 6px;
+}
+.main-banner .main-banner-btn-imgL {
+    float: left;
+    padding: 12px 8px;
+}
+/* #endregion-海报-end */
+/* #region-内容区1-start */
+.content1 {
+    background-image: url(" https://cs.hrbust.edu.cn/_upload/tpl/01/4e/334/template334/images/main.png");
+    background-repeat: no-repeat;
+}
+.content1 .container {
+    height: 376px;
+    width: 1100px;
+    padding-top: 25px;
+}
+.content1 .content1-left{
+    height: 346px;
+    width: 718px;
+    padding-top: 14px;
+}
+.content1 .content1-left-head{
+    height: 40px;
+    width: 718px;
+    margin-bottom: 6px;
+}
+.content1 .content1-left-head-title {
+    background-color: #bedcf6;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    color: #105fa5;
+    width: 108px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.content1 .content1-left-head-more a {
+    font-size: 14px;
+}
+.content1 .content1-left-main {
+    width: 718px;
+    height: 300px;
+}
+.content1 .content1-left-main-photo {
+    width: 350px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+.content1 .content1-left-main-photo-box {
+    padding-top: 6px;
+    width: 350px;
+    height: 274px;
+    position: absolute;
+}
+.content1 .content1-left-main-photo-box-img {
+    width: 350px;
+    height: 274px;
+    position: absolute;
+    opacity: 0;
+}
+.content1 .content1-left-main-photo-box-img-show {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-shadow {
+    position: absolute;
+    right: 0px;
+    bottom: 60px;
+    width: 100%;
+    height: 30px;
+    line-height: 25px;
+    background: url("https://cs.hrbust.edu.cn/_upload/tpl/01/4e/334/template334/images/focus_bg.png") no-repeat right center;
+
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-shadow-box {
+    position: absolute;
+    top: 12px;
+    right: 0;
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-shadow-dot {
+    background-color: white;
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    float: left;
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-shadow-dot-show {
+    background-color: #146CC1;
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-content {
+    width: 320px;
+    height: 45px;   
+    background-color: #f1f1f1;
+    position: absolute;
+    right: 0px;
+    bottom: 15px;
+    line-height: 45px;  
+    font-size: 16px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 15px;
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-content-a {
+    color:#105fa5;
+    opacity: 0;
+    position: absolute;
+}
+.content1 .content1-left-main-photo .content1-left-main-photo-content-a-show {
+    color:#105fa5;
+    opacity: 1;
+}
+.content1 .content1-left-main-photo-btnBox {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    text-align: center;
+    width: 350px;
+    opacity: 0;
+}
+.content1 .content1-left-main-photo-btnBox-show {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+.content1 .content1-left-main-photo-btnBox > a{
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    background-color: black;
+    height: 50px;
+    line-height: 50px;
+    padding: 4px;
+    
+}
+
+.content1 .content1-left-main-text {
+    width: 340px;
+    height: 300px;
+}
+.content1 .content1-left-main-text-text1 {
+    width: 340px;
+    height: 128px;
+    padding-top: 5px;
+    padding-bottom: 13px;
+    margin-bottom: -18px;
+}
+.content1 .content1-left-main-text-text1-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.content1 .content1-left-main-text-text1-content a{
+    font-size: 16px;
+    color: black;
+    line-height: 24px;
+    font-weight: bold;  
+}
+.content1 .content1-left-main-text-text1-content1 {
+    margin-bottom: 18px;
+}
+.content1 .content1-left-main-text-text1-content2 {
+    border-top: 1px dashed #c7c7c7;
+    padding-top: 10px;
+    padding-bottom: 4px;
+}
+.content1 .content1-left-main-text-text1-content3 {
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #c7c7c7;
+}
+.content1 .content1-left-main-text-text1-content3 a{
+    font-size: 13px;
+    line-height: 24px;
+    color: #7a7a7a;
+    font-weight: normal;
+}
+.content1 .content1-left-main-text-text2 a {
+    font-size: 14px;
+    color: #3b3b3b;
+}
+.content1 .content1-left-main-text-text2-content1 {
+    padding-top: 5px;
+}
+.content1 .content1-left-main-text-text2-content2 {
+    padding-top: 11px;
+}
+.content1 .content1-left-main-text-text2-content3 {
+    padding-top: 11px;
+}
+.content1 .content1-left-main-text-text2-content4 {
+    padding-top: 11px;
+}
+.content1 .content1-right{
+    width: 345px;
+    height: 362px;
+    padding-top: 14px;
+}
+.content1 .content1-right-head {
+    width: 345px;
+    height: 40px;
+    margin-bottom: 6px;
+}
+.content1 .content1-right-head-title {
+    background-color: #bedcf6;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    color: #105fa5;
+    width: 108px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.content1 .content1-right-head-more a {
+    font-size: 14px;
+}
+.content1 .content1-right-main {
+    width: 345px;
+    height: 316px;
+    overflow: hidden;
+}
+.content1 .content1-right-main-content {
+    margin: 10px 0;
+    padding-bottom: 16px;
+}
+.content1 .content1-right-main-content1 {
+    margin: 0;
+    padding-bottom: 16px;
+}
+.content1 .content1-right-main .logo {
+    width: 72px;
+    height: 74px;
+}
+.content1 .content1-right-main .logo-d {
+    text-align: center;
+    width: 72px;
+    height: 41px;
+    background-color: #004891;
+    color: #fff;
+    font-size: 22px;
+    line-height: 41px;
+}
+.content1 .content1-right-main .logo-d:hover {
+    background-color: #d6bd88;
+    transition: all 0.4s ease-in-out;
+}
+.content1 .content1-right-main .logo-ym {
+    text-align: center;
+    width: 72px;
+    height: 31px;
+    margin-top: 2px;
+    background-color: #e6e6e6;
+    color: #737373;
+    font-size: 12px;
+    line-height: 31px;
+}
+
+.content1 .content1-right-main .info {
+    margin-top: 0px;
+    width: 243px;
+    height: 66px;
+    line-height: 33px;
+    margin-left: 28px;
+}
+.content1 .content1-right-main .info a{
+    color: #3b3b3b;
+}
+/* #endregion-内容区1-end */
+/* #region-内容区2-start */
+.content2 {
+    width: 100%;
+    background: url("https://cs.hrbust.edu.cn/_upload/tpl/01/4e/334/template334/images/main3.png") no-repeat center;
+}
+.content2 .container {
+    height: 290px;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+.content2 .content2-contentLeft {
+    width: 350px;
+    height: 290px;
+}
+.content2 .content2-contentmiddle {
+    width: 340px;
+    height: 290px;
+    margin: 0 32px;
+}
+.content2 .content2-contentright {
+    width: 345px;
+    height: 290px;
+}
+.content2 .content2-head{
+    height: 40px;
+    width: 100%;
+    margin-bottom: -3px;
+}
+.content2 .content2-head-title {
+    background-color: #bedcf6;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    color: #105fa5;
+    width: 108px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.content2 .content2-head-more a {
+    font-size: 14px;
+    line-height: 28px;
+}
+.content2 .content2-info-ul-li {
+    margin-bottom: 13px;
+}
+.content2 .content2-info-ul-li-a {
+    color: #3b3b3b;
+    font-size: 14px;
+}
+.content2 .content2-info-ul-li-span {
+    font-size: 13px;
+    color: #999;
+}
+
+/* #endregion-内容区2-end */
+/* #region-内容区3-start */
+.content3 .container {
+    width: 1100px;
+    height: 752px;
+}
+.content3 .content3-head{
+    height: 28px;
+    width: 100%;
+    margin-bottom: -3px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 25px;
+}
+.content3 .content3-head-title {
+    background-color: #bedcf6;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    color: #105fa5;
+    width: 108px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.content3 .content3-head-more a {
+    font-size: 14px;
+    line-height: 28px;
+}
+.content3 .content3-part1 {
+    width: 100%;
+    height: 288px;
+    margin-bottom: 25px;
+    /* overflow: hidden; */
+}
+.content3 .content3-part1-main {
+    width: 100%;
+    height: 220px;
+    padding: 6px 0;
+    /* background: #bedcf6; */
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0;
+    cursor: pointer;
+
+}
+.content3 .content3-part1-main-box {
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    /* float: left; */
+    margin: 0 16px;
+    width: 260px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    top: 0;
+    left: 0;
+}
+
+.content3 .content3-part1-main-box > img{
+    width: 250px;
+    height: 180px;
+}
+.content3 .content3-part1-main-box > div{
+    color: #3b3b3b;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.content3 .content3-part2-main {
+    width: 100%;
+    height: 168px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    margin-top: 2px;
+}
+.content3 .content3-part2-main-list {
+    width: 1100px;
+    height: 150px;
+}
+.content3 .content3-part2-main-list-items {
+    width: 339PX;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #b9c9d7;
+    background: #ebf1f5;
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+    color: #3b3b3b;;
+}
+.content3 .content3-part2-main-more {
+    width: 1100px;
+    height: 15px;
+    margin-top: 3px;
+}
+.content3 .content3-part2-main-more-img {
+    margin-top: 2px;
+    cursor: pointer;
+}
+.content3 .content3-part3 {
+    width: 1100px;
+    height: 153px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.content3 .content3-part3-content {
+    width: 100%;
+    height: 85px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+
+}
+.content3-part3-content-ul-li {
+    position: relative;
+    cursor: pointer;
+    margin-right: 14px;
+}
+.content3 .content3-part3-content-ul-li-span {
+    position: absolute;
+    top: 42px;
+    left: 43px;
+    text-align: center;
+}
+/* #endregion-内容区3-end */
+/* #region-尾部-start */
+.footer {
+    background: #105fa5;
+}
+.footer .container{
+    width: 1100px;
+    height: 231px;
+}
+.footer .footer-part1 {
+    height: 84px;
+}
+.footer .footer-part1-ul-li {
+    height: 34px;
+    line-height: 34px;
+    padding: 25px 14px;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.8;
+}
+.footer .footer-part2 {
+    height: 56px;
+    padding: 45px 0;
+    border-top: 1px solid #287cc6;
+    position: relative;
+}
+.footer .footer-part2 p{
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.7;
+}
+.footer .footer-part2-logo {
+    position: absolute;
+    width: 200px;
+    height: 110px;
+    top: 16px;
+    left: 900px;
+}
+.footer .footer-part2-logo-ul-li {
+    width: 80px;
+    height: 110px;
+    margin-left: 20px;
+}
+.footer .footer-part2-logo-ul-li-img {
+    width: 80px;
+    height: 80px;
+}
+.footer .footer-part2-logo-ul-li-name {
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 29px;
+}
+/* #endregion-尾部-end */
