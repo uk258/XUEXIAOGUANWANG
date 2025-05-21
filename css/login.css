@@ -92,7 +92,6 @@
   color: #105fa5;
 }
 
-/* 原始 input 样式 */
 .form input {
   display: block;
   width: 80%;
@@ -102,14 +101,12 @@
   border: 1px #105fa5 solid;
 }
 
-/* 包裹 input 和 icon 的容器 */
 .input-box {
   position: relative;
   width: 86%;
   margin: 10px auto;
 }
 
-/* 图标位置 */
 .input-box .icon {
   position: absolute;
   left: 10px;
@@ -121,16 +118,15 @@
   z-index: 2;
 }
 
-/* 👇 修改 input 样式以避免 icon 重叠，保持原尺寸 */
 .input-box input {
   display: block;
   width: 100%;
   margin: 0 auto;
   padding: 10px;
-  padding-left: 35px; /* 给左边留空间放 icon */
+  padding-left: 35px;
   font-size: 16px;
   border: 1px solid #105fa5;
-  box-sizing: border-box; /* 确保 padding 不撑大尺寸 */
+  box-sizing: border-box;
 }
 
 form button {
