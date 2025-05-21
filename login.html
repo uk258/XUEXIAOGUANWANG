@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <title>登录</title>
+</head>
+<body>
+    <!-- 顶部 -->
+    <div class="top">
+        <div class="bgi">
+            <img src="https://cs.hrbust.edu.cn/_upload/article/images/d1/d7/2e843f0d43c49e15064b0cafa2a9/9477c051-4267-4d0a-b979-db221c1b6135.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="container-header clearfix">
+                <img class="img" src="https://graduate.hrbust.edu.cn/_upload/site/00/57/87/logo.png" alt="">
+                <div class="dot"></div>
+                <span class="title">数字校园统一身份认证</span>
+            </div>
+            
+        </div>
+    </div>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="container">
+            <div class="form-box">
+                <!-- 最上面登录/注册切换 -->
+                <div class="form-box-top">
+                    <div id="showWhat">登录</div>
+                    <div id="trans" class="trans">切换到注册</div>
+                </div>
+
+                <!-- 登录表单 -->
+                <form id="form-box-loginForm" class="form active">
+                    <div class="input-box">
+                        <span class="icon">👤</span>
+                        <input type="text" id="loginUsername" placeholder="用户名" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">🔒</span>
+                        <input type="password" id="loginPassword" placeholder="密码" required>
+                    </div>
+                    <button class="yes" type="button">确认登录</button>
+                    <button class="no" type="button">取消登录</button>
+                </form>
+
+                <!-- 注册表单 -->
+                <form id="form-box-registerForm" class="form">
+                    <div class="input-box">
+                        <span class="icon">👤</span>
+                        <input type="text" id="regUsername" placeholder="用户名" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">🔒</span>
+                        <input type="password" id="regPassword" placeholder="密码" required>
+                    </div>
+                    <button class="yes" type="button">确认注册</button>
+                    <button class="no" type="button">取消注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 功能：切换显示
+        // 获取登录表单
+        const loginForm=document.getElementById('form-box-loginForm');
+        // 获取注册表单
+        const registerForm=document.getElementById('form-box-registerForm');
+        // 获取切换按钮
+        const trans=document.getElementById('trans');
+        // 获取登录/注册显示框
+        const showWhat=document.getElementById('showWhat');
+        // 切换注册/登录显示
+        function twistzz() {
+            // 更改显示文字
+            if(showWhat.textContent==="登录"){
+                showWhat.textContent="注册"
+            }else{
+                showWhat.textContent="登录"
+            }
+            if(trans.textContent==="切换到注册"){
+                trans.textContent="切换到登录"
+            }else{
+                trans.textContent="切换到注册"
+            }
+            // 更改表单
+            if(loginForm.classList.contains("active")){
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+            }else{
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+            }
+        }
+        trans.onclick = () => {
+            twistzz()
+        };
+        
+        // 功能：取消登录/注册时刷新网页
+        // 获取取消登录/注册按钮
+        const cancel=document.getElementsByClassName("no")
+        for(let i=0;i<cancel.length;i++){
+            cancel[i].onclick=(event)=>{
+                if(confirm(`确定要${event.target.textContent}吗？`)){
+                    alert(`${event.target.textContent}, 刷新网页`)
+                    location.reload()
+                }
+            }
+        }
+
+        // 注册
+        // 获取确认注册按钮
+        const accept=document.getElementsByClassName("yes")
+        accept[1].onclick=()=>{
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            console.log(`注册用户【${username}】，密码【${password}】`);
+            alert('注册成功，欢迎你 ' + username + '！');
+        }
+        // 登录
+        accept[0].onclick=()=>{
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            if (username === 'admin' && password === '123456') {
+            alert('登录成功');
+            window.location.href = 'https://cs.hrbust.edu.cn'; // 模拟跳转
+            } else {
+            alert('用户名或密码错误');
+            }
+        }
+
+        
+</script>
+</body>
+</html>
