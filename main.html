@@ -433,6 +433,10 @@
                         <img src="https://cs.hrbust.edu.cn/_upload/article/images/9c/95/10674c3b42a394dbc76418a47b55/f5cd55d1-05af-443d-93b2-61240e61458b_s.png" alt="">
                         <div>守正创新攀高峰  团结奋进开新...</div>
                     </div>
+                    <div class="content3-part1-main-box content3-part1-main-box4">
+                        <img src="https://cs.hrbust.edu.cn/_upload/article/images/9c/95/10674c3b42a394dbc76418a47b55/f5cd55d1-05af-443d-93b2-61240e61458b_s.png" alt="">
+                        <div>守正创新攀高峰  团结奋进开新...</div>
+                    </div>
                 </div>
             </div>
             <!-- 第二部分 -->
@@ -544,10 +548,8 @@
         const boxList = Array.from(document.querySelectorAll('.content3-part1-main-box'))
         // 速度
         let speed = 0.5
-        // 克隆第一个box并放到最后
-        const clone = boxList[0].cloneNode(true)
-        container.appendChild(clone)
-        const allBoxes = Array.from(container.children) // 包括克隆的
+        // 获取盒子元素
+        const allBoxes = Array.from(container.children)
 
         // 初始化 left 位置
         allBoxes.forEach((box, index) => {
